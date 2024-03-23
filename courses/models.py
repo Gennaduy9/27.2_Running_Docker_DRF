@@ -6,7 +6,7 @@ NULLABLE = {'blank': True, 'null': True}
 
 
 class Course(models.Model):
-    name = models.CharField(max_length=100, verbose_name='Название')
+    name = models.CharField(max_length=110, verbose_name='Название')
     preview_image = models.ImageField(upload_to='course_previews/', verbose_name='Изображение', **NULLABLE)
     description = models.TextField(**NULLABLE, verbose_name='Описание')
     owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, verbose_name='Владелец',
@@ -41,7 +41,7 @@ class CourseSubscription(models.Model):
 class CoursePayment(models.Model):
     name = models.ForeignKey(Course, on_delete=models.CASCADE, verbose_name='Название продукта', **NULLABLE)
     price_amount = models.CharField(verbose_name='Цена платежа', **NULLABLE)
-    payment_link = models.URLField(max_length=400, verbose_name='Ссылка на оплату', **NULLABLE)
+    payment_link = models.URLField(max_length=410, verbose_name='Ссылка на оплату', **NULLABLE)
     payment_id = models.CharField(max_length=255, verbose_name='Идентификатор платежа', **NULLABLE)
 
     def __str__(self):

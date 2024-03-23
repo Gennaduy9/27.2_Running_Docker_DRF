@@ -17,7 +17,7 @@ class User(AbstractUser):
     username = None
 
     email = models.EmailField(unique=True, verbose_name='Почта')
-    phone = models.CharField(max_length=35, **NULLABLE, unique=True, verbose_name='Телефон')
+    phone = models.CharField(max_length=36, **NULLABLE, unique=True, verbose_name='Телефон')
     avatar = models.ImageField(**NULLABLE, upload_to='users', verbose_name='Аватар')
     country = models.CharField(**NULLABLE, max_length=100, verbose_name='Страна')
     role = models.CharField(max_length=9, choices=UserRoles.choices, default=UserRoles.MEMBER)

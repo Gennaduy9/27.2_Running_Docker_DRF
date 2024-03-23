@@ -6,7 +6,7 @@ NULLABLE = {'blank': True, 'null': True}
 
 
 class Lesson(models.Model):
-    name = models.CharField(max_length=100, verbose_name='название')
+    name = models.CharField(max_length=110, verbose_name='название')
     description = models.TextField(**NULLABLE, verbose_name='Описание')
     preview_image = models.ImageField(upload_to='lesson_previews/', **NULLABLE, verbose_name='Изображение')
     video = models.TextField(**NULLABLE, verbose_name='Ссылка на видео')
